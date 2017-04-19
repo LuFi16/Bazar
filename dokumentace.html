@@ -1,0 +1,475 @@
+<!DOCTYPE html > 
+<html lang="cs">
+    <head>
+        <!-- Odkaz na github: https://github.com/LuFi16/Bazar -->
+        <meta http-equiv="content-type"
+              content="text/html; charset=UTF-8">
+        <meta name="Autor"
+              content="Lucie Fiedlerová">
+        <title>Bazar - dokumentace</title>     
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        
+        <div class="container">
+            <h1>Bazar ojetých aut - dokumentace</h1>
+            
+                <nav id="obsah">
+                    <h2>Obsah</h2>
+                    <ul>
+                        <li><a href="#obsah">Obsah</a></li>
+                        <li><a href="#uvod">Úvod</a></li>
+                        <li><a href="#metodika">Metodika</a></li>
+                        <li><a href="#popis">Popis použitých elementů a atributů</a></li>
+                        <li><a href="#transformace">Popis transformace</a></li>
+                        <li><a href="#zaver">Závěr</a></li>
+                        <li><a href="#paticka">Patička</a></li>
+                    </ul>
+                    <hr />
+                </nav>
+            
+            <main>
+                <section id="uvod">
+                    
+                        <header>
+                            <h2>Úvod</h2>
+                        </header>          
+                        <p>
+                            Semestrální práce se zabývá nastavením konfigurace imaginární aplikace jménem Bazar, kde se prodávají ojetá auta.
+                        </p>
+                        <p>Součástí práce je samotné XML, XSD schéma, XSL transformace do html a tato dokumentace. Soubor řeší jednotlivá nastavení aplikace jak obecná, tak přístupová práva, jednotlivé kategorie.
+                    
+                </section>
+                <section id="metodika">
+                   
+                        <header>
+                            <h2>Metodika</h2>
+                        </header>
+                        <p>
+                            Všechny soubory byly vytvořeny v programu <a href="https://netbeans.org/">NetBeans IDE 8.2</a>
+                            a spouštěny v prohlížeči <a href="https://www.google.com/chrome/browser/desktop/index.html">Google Chrome</a>.
+                            Informace byly čerpány z přednášek a cvičení Značkovacích jazyků na ČZU a veřejně dostupných zdrojů.
+                        </p>
+                        <p>                 
+                            Nejdříve byl vytvořen základní xml dokument a podle něj bylo vytvořeno XSD schéma.
+                        </p>
+                        <p>
+                            Byla zkontrolována validita těchto souborů pomocí webového validátoru <a href="http://www.utilities-online.info/xsdvalidation/">Osys</a>. 
+                            Zárověň byla provedena kontrola, zda XML odpovídá xsd schématu.
+                        </p>
+                        <p>
+                            Dále byla vytvořena XSL transformace do json, která byla ověřena ve webovém validátoru <a href="http://json.parser.online.fr">Json Parser Online</a>
+                        </p>    
+                        <p>
+                            Byla vytvořena dokumentace v HTML, která byla zvalidována ve <a href="https://validator.w3.org">W3</a>.
+                        </p>
+                        <p>
+                            Projekt byl nahrán na <a href="">GitHub</a>.
+                        </p>
+                    
+                </section>
+                <section id="popis" >
+                    
+                        <header>
+                            <h2>Popis použitých elementů a atributů</h2>
+                        </header>
+                        <h3>Elementy</h3>
+                        <table border="1" id="elementy" title="Elementy">
+                            <tr>
+                                <td>Název anglicky</td>
+                                <td>Název česky</td>
+                                <td>Popis</td>
+                                <td>Schématické omezení</td>
+                            </tr>
+                            <tr>                       
+                                <td>general_settings</td>
+                                <td>obecné nastavení</td>
+                                <td>Ošetřuje základní nastavení splikace.</td>
+                                <td>není</td>
+                            </tr>
+                            <tr>                       
+                                <td>charset</td>
+                                <td>znaková sada</td>
+                                <td>Vybere, v jakém charsetu bude parsován text aplikace.</td>
+                                <td>utf-8, utf-7, windows-1258, iso-885</td>
+                            </tr> 
+                            <tr>                       
+                                <td>language</td>
+                                <td>jazyk</td>
+                                <td>Vybere, v jakém jazyce bude aplikace.</td>
+                                <td>cestina, anglictina, nemcina, francouzstina</td>
+                            </tr>
+                            <tr>                       
+                                <td>javascript</td>
+                                <td>JavaScript</td>
+                                <td>Určuje, jestli bude v aplikaci povolen JavaScript.</td>
+                                <td>0, 1</td>
+                            </tr>
+                            <tr>                       
+                                <td>vbscript</td>
+                                <td>VBscript</td>
+                                <td>Určuje, jestli bude v aplikaci povolen VBScript.</td>
+                                <td>0, 1</td>
+                            </tr>
+                            <tr>                       
+                                <td>function</td>
+                                <td>Funkce</td>
+                                <td>Určuje jaké funkce se budou v aplikaci používat.</td>
+                                <td>není</td>
+                            </tr>
+                            <tr>                       
+                                <td>searching</td>
+                                <td>Vyhledávání</td>
+                                <td>Určuje, jestli bude v aplikaci povoleno vyhledávání.</td>
+                                <td>0, 1</td>
+                            </tr>
+                            <tr>                       
+                                <td>filters</td>
+                                <td>Filtry</td>
+                                <td>Určuje, jestli budou v aplikaci povoleny filtry.</td>
+                                <td>0, 1</td>
+                            </tr>
+                            <tr>                       
+                                <td>check_boxes</td>
+                                <td>Zaškrtávací pole</td>
+                                <td>Určuje, jestli budou v aplikaci povoleny checkboxy.</td>
+                                <td>0, 1</td>
+                            </tr>
+                            <tr>                       
+                                <td>popup_window</td>
+                                <td>Vyskakovací okno</td>
+                                <td>Určuje, jestli bude v aplikaci povoleno vyskakování nových oken.</td>
+                                <td>0, 1</td>
+                            </tr> 
+                            <tr>                       
+                                <td>advertisement</td>
+                                <td>Reklamy</td>
+                                <td>Určuje, jestli budou v aplikaci povoleny reklamy.</td>
+                                <td>0, 1</td>
+                            </tr> 
+                            <tr>                       
+                                <td>help</td>
+                                <td>Nápověda</td>
+                                <td>Určuje, jestli je povoleno zobrazení nápovědy.</td>
+                                <td>0, 1</td>
+                            </tr> 
+                            <tr>                       
+                                <td>scroll_bar</td>
+                                <td>Posuvník</td>
+                                <td>Určuje, jestli budou v aplikaci povoleny posuvníky v inzerátech.</td>
+                                <td>0, 1</td>
+                            </tr> 
+                            <tr>                       
+                                <td>video</td>
+                                <td>Video</td>
+                                <td>Určuje, jestli budou v aplikaci povoleny videa.</td>
+                                <td>0, 1</td>
+                            </tr> 
+                            <tr>                       
+                                <td>chat</td>
+                                <td>Konverzace</td>
+                                <td>Určuje, jestli bude v aplikaci povolen chat.</td>
+                                <td>0, 1</td>
+                            </tr> 
+                            <tr>                       
+                                <td>forum</td>
+                                <td>Fórum</td>
+                                <td>Určuje, jestli bude v aplikaci povoleno fórum.</td>
+                                <td>0, 1</td>
+                            </tr> 
+                            <tr>                       
+                                <td>zoom</td>
+                                <td>Přiblížení</td>
+                                <td>Určuje, jestli bude v aplikaci v inzerátech poveleno zoomování.</td>
+                                <td>0, 1</td>
+                            </tr> 
+                            <tr>                       
+                                <td>protocol</td>
+                                <td>Protokol</td>
+                                <td>Určuje, jaký protokol bude aplikace používat pro zobrazení.</td>
+                                <td>http, https, ftp</td>
+                            </tr>
+                            <tr>                       
+                                <td>access_restriction</td>
+                                <td>Omezení přístupu</td>
+                                <td>Určuje konkrétní IP adresy, který je zakázán přístup do aplikace.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>                       
+                                <td>contact</td>
+                                <td>Kontakt</td>
+                                <td>Informace o emailu správců aplikace, kvůli případným problémům.</td>
+                                <td>Korektnost emailové adresy je zajištěna regulárním výrazem ve schématu.</td>
+                            </tr>
+                            <tr>                       
+                                <td>overwiev_of_rights</td>
+                                <td>Přehled práv</td>
+                                <td>Obsahuje nastavení přístupových práv uživatelů.</td>
+                                <td>není</td>
+                            </tr>
+                            <tr>                       
+                                <td>right</td>
+                                <td>Právo</td>
+                                <td>Obsahuje jednotlivá přístupová práva rozdělená do rolí.</td>
+                                <td>není</td>
+                            </tr>
+                            <tr>                       
+                                <td>symbol</td>
+                                <td>Znak</td>
+                                <td>Určuje znak pro konkrétní roli, kvůli jednoduššímu přiřazení.</td>
+                                <td>A, S, R, N</td>
+                            </tr>
+                            <tr>                       
+                                <td>read</td>
+                                <td>Čtení</td>
+                                <td>Určuje, jestli má uživatel právo prohlížet a číst jednotlivé záznamy.</td>
+                                <td>0, 1</td>
+                            </tr>
+                            <tr>                       
+                                <td>user_editing</td>
+                                <td>Správa uživatelů</td>
+                                <td>Určuje, jestli může uživatel upravovat, přidávat nebo mazat ostatní uživatele.</td>
+                                <td>0, 1</td>
+                            </tr>
+                            <tr>                       
+                                <td>draft_ad</td>
+                                <td>Návrh inzerátu</td>
+                                <td>Určuje, jestli může uživatel vytvořit a odeslat návrh inzerátu ke schválení.</td>
+                                <td>0, 1</td>
+                            </tr>
+                            <tr>                       
+                                <td>ad_accept</td>
+                                <td>Schválení inzerátu</td>
+                                <td>Určuje, jestli může uživatel schválit inzerát pro jeho zveřejnění.</td>
+                                <td>0, 1</td>
+                            </tr>
+                            <tr>                       
+                                <td>delete_ad</td>
+                                <td>Mazání inzerátu</td>
+                                <td>Určuje, jestli může uživatel smazat zveřejněný inzerát, nebo jeho návrh.</td>
+                                <td>0, 1</td>
+                            </tr>
+                            <tr>                       
+                                <td>responses_to_ad</td>
+                                <td>Odpověď na inzerát</td>
+                                <td>Určuje, jestli může uživatel odpovídat na inzeráty (když má o něj zájem).</td>
+                                <td>0, 1</td>
+                            </tr>
+                                                        <tr>                       
+                                <td>accept_responses</td>
+                                <td>Přijmutí odpovědi</td>
+                                <td>Určuje, jestli může uživatel přijmout konkrétní odpověď na inerát.</td>
+                                <td>0, 1</td>
+                            </tr>
+                                                        <tr>                       
+                                <td>decline_responses</td>
+                                <td>Zamítnutí odpovědi</td>
+                                <td>Určuje, jestli může uživatel odmítnout konkrétní odpověď na inerát.</td>
+                                <td>0, 1</td>
+                            </tr>
+                                                        <tr>                       
+                                <td>reset_passwords</td>
+                                <td>Přenastavení hesla</td>
+                                <td>Určuje, jestli může uživatel resetovat heslo jinému uživateli.</td>
+                                <td>0, 1</td>
+                            </tr>
+                            <tr>                       
+                                <td>category</td>
+                                <td>Kategorie</td>
+                                <td>Obsahuje nastavení jednotlivých kategorií aut.</td>
+                                <td>není</td>
+                            </tr>
+                            <tr>                       
+                                <td>number_of_ad_on_page</td>
+                                <td>Počet inzerátů na stránce</td>
+                                <td>Určuje, kolik inzerátů se zobrazí na stránce v dané kategorii.</td>
+                                <td>jen kladná čísla</td>
+                            </tr>
+                            <tr>                       
+                                <td>description</td>
+                                <td>Popis</td>
+                                <td>Blíže charakterizuje danou kategorii.</td>
+                                <td>10 - 150 znaků</td>
+                            </tr>
+                            <tr>                       
+                                <td>access-rights</td>
+                                <td>Přístupová práva</td>
+                                <td>Obsahuje nastavení uživatelských práv pro danou kategorii.</td>
+                                <td>není</td>
+                            </tr>
+                            <tr>                       
+                                <td>person</td>
+                                <td>Osoba</td>
+                                <td>Obsahuje jednotlivé osoby (uživatele) daných kategorií a identifikuje je pomocí atributu id</td>
+                                <td>není</td>
+                            </tr>
+                            <tr>                       
+                                <td>name</td>
+                                <td>Jméno</td>
+                                <td>Určuje pravé jméno uživatele.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>                       
+                                <td>surname</td>
+                                <td>příjmení</td>
+                                <td>Určuje pravé příjmení uživatele.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>                       
+                                <td>login</td>
+                                <td>Přihlašovací jméno</td>
+                                <td>Určuje konkrétní přihlašovací jméno uživatele.</td>
+                                <td>string</td>
+                            </tr>
+                            <tr>                       
+                                <td>rights</td>
+                                <td>Práva</td>
+                                <td>Určuje do jaké role práv uživatel patří, tedy jaká všechna práva má.</td>
+                                <td>A, S, R, N (podle elementu symbol)</td>
+                            </tr>                      
+                            <tr>                       
+                                <td>email</td>
+                                <td>E-mail</td>
+                                <td>Určuje email uživatele.</td>
+                                <td>Korektnost emailové adresy je zajištěna regulárním výrazem ve schématu.</td>
+                            </tr>                      
+                            <tr>                       
+                                <td>phone</td>
+                                <td>Telefon</td>
+                                <td>Určuje telefonní číslo uživatele.</td>
+                                <td>string</td>
+                            </tr>                       
+                            <tr>                       
+                                <td>adress</td>
+                                <td>Adresa</td>
+                                <td>Obsahuje adresu uživatele.</td>
+                                <td>není</td>
+                            </tr>                       
+                            <tr>                       
+                                <td>street</td>
+                                <td>Ulice</td>
+                                <td>Určuje ulici bydliště uživatele.</td>
+                                <td>string</td>
+                            </tr>                       
+                            <tr>                       
+                                <td>land_registry_number</td>
+                                <td>Číslo popisné</td>
+                                <td>Určuje číslo popisné domu bydliště uživatele.</td>
+                                <td>integer</td>
+                            </tr>                       
+                            <tr>                       
+                                <td>house_number</td>
+                                <td>Číslo orientační</td>
+                                <td>Určuje číslo orientační domu bydliště uživatele.</td>
+                                <td>integer</td>
+                            </tr>                       
+                            <tr>                       
+                                <td>city</td>
+                                <td>Město</td>
+                                <td>Určuje město bydliště uživatele.</td>
+                                <td>string</td>
+                            </tr>                       
+                            <tr>                       
+                                <td>ZIP</td>
+                                <td>PSČ</td>
+                                <td>Určuje PSČ města bydliště uživatele.</td>
+                                <td>string</td>
+                            </tr>                                                       
+                        </table>
+                        <h3>Atributy</h3>
+                        <table border="1" id="atributy" title="Atributy">
+                            <tr>
+                                <td>Název anglicky</td>
+                                <td>Název česky</td>
+                                <td>Popis</td>
+                            </tr>
+                            <tr>                       
+                                <td>role</td>
+                                <td>Role</td>
+                                <td>Určuje roli, která má daná oprávnění.</td>
+                            </tr>
+                            <tr>                       
+                                <td>num</td>
+                                <td>Číslo</td>
+                                <td>Určuje číslo role podle důležitosti (čím menší číslo, tím důležitější).</td>
+                            </tr>
+                            <tr>                       
+                                <td>id</td>         
+                                <td>ID</td>
+                                <td>Určuje identifikační číslo každé osoby.</td>
+                            </tr>
+                            <tr>                       
+                                <td>gendre</td>         
+                                <td>Pohlaví</td>
+                                <td>Určuje pohlaví každé osoby.</td>
+                            </tr>
+
+                            <tr>                       
+                                <td>state</td>         
+                                <td>Stát</td>
+                                <td>Určuje stát, kde má osoba občanství.</td>
+                            </tr>
+                            <tr>                       
+                                <td>age</td>         
+                                <td>Věk</td>
+                                <td>Určuje věk osoby.</td>
+                            </tr>
+                            <tr>                       
+                                <td>browser</td>         
+                                <td>Prohlížeč</td>
+                                <td>Určuje prohlížeč, který osoba používá pro spuštění aplikace..</td>
+                            </tr>
+                            <tr>                       
+                                <td>type</td>
+                                <td>Typ vozů</td>
+                                <td>Určuje konkrétní název kategorie (množiny aut)</td>
+                            </tr> 
+                            <tr>                       
+                                <td>shortcut</td>
+                                <td>Zkratka</td>
+                                <td>Určuje zkratku dané kategorie pro zjednodušení.</td>
+                            </tr>  
+                            <tr>                       
+                                <td>sale</td>
+                                <td>Prodej</td>
+                                <td>Určuje jak dobře se vozidla této kategorie prodávají (pro rychlejší orientaci).</td>
+                            </tr> 
+                        </table>
+                    
+                </section>
+                <section id="transformace">
+                    
+                        <header>
+                            <h2>Popis transformace</h2>
+                        </header>
+                        <p>
+                            Vytvořena transformace pomocí cyklu for-each. Vybere a za pomoci JSON odešle informace o všech uživatelích, kteří jsou registrovaní 
+                            (ale nejsou administrátor ani správce). Záznamy seřadí podle příjmení uživatelů. Transformace obsahuje test, který zjišťuje, jestli 
+                            je údaj poslední, pokud není, doplní čárku pro přehlednou a správnou syntaxi.
+                        </p>
+                    
+                </section>
+                <section id="zaver">
+                  
+                        <header>
+                            <h2>Závěr</h2>
+                        </header>
+                        <p>
+                            Tato semestrální práce mě naučila se orientovat a pracovat se značkovacími jazyky, především XML a HTML.
+                            K práci s těmito značkovacími jazyky je možné využít jakýkoli textový editor, což vidím jako velkou výhodu.
+                            Pracuje se s nimi intuitivně a přehledně. Jsem si vědoma, že tato práce by musela projít ještě mnoha změnami, aby se dala využít v praxi. 
+                            Nicméně pro pochopení a naučení se základům používání je tento rozsah dostačující.
+                        </p>
+                    
+                </section>
+            </main>
+           
+                <footer id="paticka">
+                    <p>Autor: <strong>Lucie Fiedlerová</strong>, Cvičení: Pondělí 14:00 lichý , Česká Zemědělská univerzita v Praze, 19.4.2017</p>
+                </footer>
+            
+        </div>
+    </body>
+</html>

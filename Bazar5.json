@@ -1,0 +1,65 @@
+
+        [ 
+		
+			{
+                        "ID": "4",
+			"Jméno": "Emanuel",
+			"Príjmení": "Stránský",			
+			"Práva": "R"
+			},
+			{
+                        "ID": "4",
+			"Jméno": "Klára",
+			"Príjmení": "Řezníková",			
+			"Práva": "R"
+			},
+			{
+                        "ID": "3",
+			"Jméno": "Adam",
+			"Príjmení": "První",			
+			"Práva": "R"
+			},
+			{
+                        "ID": "3",
+			"Jméno": "Markéta",
+			"Príjmení": "Poláková",			
+			"Práva": "R"
+			},
+			{
+                        "ID": "4",
+			"Jméno": "Evžen",
+			"Príjmení": "Polák",			
+			"Práva": "R"
+			},
+			{
+                        "ID": "4",
+			"Jméno": "Patricie",
+			"Príjmení": "Lišková",			
+			"Práva": "R"
+			},
+			{
+                        "ID": "3",
+			"Jméno": "Jan",
+			"Príjmení": "Dolní",			
+			"Práva": "R"
+			},
+			{
+                        "ID": "4",
+			"Jméno": "Ivan",
+			"Príjmení": "Ďas",			
+			"Práva": "R"
+			},
+			{
+                        "ID": "3",
+			"Jméno": "Iveta",
+			"Príjmení": "Bártová",			
+			"Práva": "R"
+			},
+			{
+                        "ID": "3",
+			"Jméno": "Pavel",
+			"Príjmení": "Adam",			
+			"Práva": "R"
+			}
+		]
+    

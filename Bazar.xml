@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="fiedlerova_lucie.xsl"?>
+<!-- Odkaz na github: https://github.com/LuFi16/Bazar -->
+<Bazar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="bazarSchema.xsd">
+    <!-- General settings -->
+    <general_settings>
+        <charset>utf-8</charset>
+        <language>cestina</language>
+        <javascript>1</javascript>
+        <vbscript>0</vbscript>
+        <function>
+            <searching>1</searching>
+            <filters>1</filters>
+            <check_boxes>0</check_boxes>
+            <popup_window>0</popup_window>
+            <advertisement>1</advertisement>
+            <help>1</help>
+            <scroll_bar>1</scroll_bar>
+            <video>0</video>
+            <chat>0</chat>  
+            <forum>0</forum>  
+            <zoom>1</zoom>             
+        </function>
+        <protocol>http</protocol>
+        <access_restrictions></access_restrictions>	
+        <contact>bazar@bazar.cz</contact>
+    </general_settings>
+
+    <!-- Settings of user rights -->
+    <overwiev_of_rights>
+        <right role="Administrátor" num="1">
+            <symbol>A</symbol>
+            <read>1</read>
+            <users_editing>1</users_editing>
+            <draft_ad>1</draft_ad>
+            <ad_accept>1</ad_accept>
+            <delete_ad>1</delete_ad>
+            <responses_to_ad>1</responses_to_ad>
+            <accept_responses>1</accept_responses>
+            <decline_responses>1</decline_responses>
+            <reset_passwords>1</reset_passwords>
+        </right>
+        <right role="Správce inzerátů" num="2">
+            <symbol>S</symbol>
+            <read>1</read>
+            <users_editing>0</users_editing>
+            <draft_ad>1</draft_ad>
+            <ad_accept>1</ad_accept>
+            <delete_ad>1</delete_ad>
+            <responses_to_ad>1</responses_to_ad>
+            <accept_responses>1</accept_responses>
+            <decline_responses>1</decline_responses>
+            <reset_passwords>0</reset_passwords>
+        </right>
+        <right role="Registrovaný uživatel" num="3">
+            <symbol>R</symbol>	
+            <read>1</read>
+            <users_editing>0</users_editing>
+            <draft_ad>1</draft_ad>
+            <ad_accept>0</ad_accept>
+            <delete_ad>0</delete_ad>
+            <responses_to_ad>1</responses_to_ad>
+            <accept_responses>1</accept_responses>
+            <decline_responses>1</decline_responses>
+            <reset_passwords>0</reset_passwords>
+        </right>
+        <right role="Neregistrovaný uživatel" num="4">
+            <symbol>N</symbol>	
+            <read>1</read>
+            <users_editing>0</users_editing>
+            <draft_ad>0</draft_ad>
+            <ad_accept>0</ad_accept>
+            <delete_ad>0</delete_ad>
+            <responses_to_ad>0</responses_to_ad>
+            <accept_responses>0</accept_responses>
+            <decline_responses>0</decline_responses>
+            <reset_passwords>0</reset_passwords>
+        </right>
+    </overwiev_of_rights>
+
+    <!-- Each category -->
+    <category type="Osobní" shortcut="M1" sale="best">
+        <number_of_ad_on_page>15</number_of_ad_on_page>
+        <description>Auta se čtyřmi koly sloužící pro přepravu osob (M).</description>
+        <access_rights>
+            <person id="1" gendre="male" state="CZ" age="35" browser="Chrome">
+                <name>Karel</name>
+                <surname>Králík</surname>
+                <login>KaKra</login>
+                <rights>A</rights>
+                <email>Kralik@gmail.cz</email>
+                <phone>756 162 175</phone>
+                <adress>
+                    <street>Krátká</street>
+                    <land_registry_number>32</land_registry_number>
+                    <house_number>78</house_number>
+                    <city>Praha</city>
+                    <ZIP>27501</ZIP>
+                </adress>
+            </person>
+            <person id="2" gendre="female" state="CZ" age="27" browser="Chrome">
+                <name>Eva</name>
+                <surname>Hořejši</surname>
+                <login>evicka25</login>
+                <rights>S</rights>
+                <email>evicka@volny.cz</email>
+                <phone>542 878 775</phone>
+                <adress>
+                    <street>Komenského</street>
+                    <land_registry_number>75</land_registry_number>
+                    <house_number>123</house_number>
+                    <city>Plzeň</city>
+                    <ZIP>27805</ZIP>
+                </adress>
+            </person>
+            <person id="3" gendre="male" state="CZ" age="43" browser="Opera">
+                <name>Jan</name>
+                <surname>Dolní</surname>
+                <login>Dolajn</login>
+                <rights>R</rights>
+                <email>dalajn@volny.cz</email>
+                <phone>752 128 712</phone>
+                <adress>
+                    <street>Amatérů</street>
+                    <land_registry_number>86</land_registry_number>
+                    <house_number>678</house_number>
+                    <city>Plzeň</city>
+                    <ZIP>27802</ZIP>
+                </adress>
+            </person>
+            <person id="4" gendre="male" state="CZ" age="52" browser="Firefox">
+                <name>Evžen</name>
+                <surname>Polák</surname>
+                <login>Ev7a</login>
+                <rights>R</rights>
+                <email>polake@volny.cz</email>
+                <phone>442 728 715</phone>
+                <adress>
+                    <street>Plzeňská</street>
+                    <land_registry_number>23</land_registry_number>
+                    <house_number>945</house_number>
+                    <city>Olomouc</city>
+                    <ZIP>22402</ZIP>
+                </adress>
+            </person>
+            <person id="5" gendre="?" state="?" age="?" browser="?">
+                <name>Neregistrovaný</name>
+                <surname></surname>
+                <login>host</login>
+                <rights>N</rights>
+                <email></email>
+                <phone></phone>
+                <adress>
+                    <street></street>
+                    <land_registry_number></land_registry_number>
+                    <house_number></house_number>
+                    <city></city>
+                    <ZIP></ZIP>
+                </adress>
+            </person>
+        </access_rights>
+    </category>
+
+    <category type="Užitková" shortcut="M2" sale="medium">
+        <number_of_ad_on_page>15</number_of_ad_on_page>
+        <description>Auta se čtyřmi koly sloužící k přepravě osob i nákladu (M).</description>
+        <access_rights>
+            <person id="1" gendre="male" state="CZ" age="35" browser="Chrome">
+                <name>Karel</name>
+                <surname>Králík</surname>
+                <login>KaKra</login>
+                <rights>A</rights>
+                <email>Kralik@gmail.cz</email>
+                <phone>756 162 175</phone>
+                <adress>
+                    <street>Krátká</street>
+                    <land_registry_number>32</land_registry_number>
+                    <house_number>78</house_number>
+                    <city>Praha</city>
+                    <ZIP>27501</ZIP>
+                </adress>
+            </person>
+            <person id="2" gendre="female" state="CZ" age="27" browser="Chrome">
+                <name>Eva</name>
+                <surname>Hořejši</surname>
+                <login>evicka25</login>
+                <rights>S</rights>
+                <email>evicka@volny.cz</email>
+                <phone>542 878 775</phone>
+                <adress>
+                    <street>Komenského</street>
+                    <land_registry_number>75</land_registry_number>
+                    <house_number>123</house_number>
+                    <city>Plzeň</city>
+                    <ZIP>27805</ZIP>
+                </adress>
+            </person>
+            <person id="3" gendre="male" state="CZ" age="50" browser="Firefox">
+                <name>Pavel</name>
+                <surname>Adam</surname>
+                <login>Ada12adA</login>
+                <rights>R</rights>
+                <email>P.Adam@seznam.cz</email>
+                <phone>357 162 185</phone>
+                <adress>
+                    <street>Dlouhá</street>
+                    <land_registry_number>52</land_registry_number>
+                    <house_number>148</house_number>
+                    <city>Praha</city>
+                    <ZIP>27501</ZIP>
+                </adress>
+            </person>
+            <person id="4" gendre="female" state="CZ" age="19" browser="Opera">
+                <name>Patricie</name>
+                <surname>Lišková</surname>
+                <login>Listicka</login>
+                <rights>R</rights>
+                <email>pajaliska@seznam.cz</email>
+                <phone>387 615 942</phone>
+                <adress>
+                    <street>Konečná</street>
+                    <land_registry_number>12</land_registry_number>
+                    <house_number>854</house_number>
+                    <city>Těšín</city>
+                    <ZIP>27403</ZIP>
+                </adress>
+            </person>
+            <person id="5" gendre="?" state="?" age="?" browser="?">
+                <name>Neregistrovaný</name>
+                <surname></surname>
+                <login>host</login>
+                <rights>N</rights>
+                <email></email>
+                <phone></phone>
+                <adress>
+                    <street></street>
+                    <land_registry_number></land_registry_number>
+                    <house_number></house_number>
+                    <city></city>
+                    <ZIP></ZIP>
+                </adress>
+            </person>
+        </access_rights>
+    </category>
+    
+    <category type="Nákladní" shortcut="N" sale="low">
+        <number_of_ad_on_page>15</number_of_ad_on_page>
+        <description>Vozidla se čtyřmi koly  do 3500 kg sloužící k přepravě nákladu (N).</description>
+        <access_rights>
+            <person id="1" gendre="male" state="CZ" age="35" browser="Chrome">
+                <name>Karel</name>
+                <surname>Králík</surname>
+                <login>KaKra</login>
+                <rights>A</rights>
+                <email>Kralik@gmail.cz</email>
+                <phone>756 162 175</phone>
+                <adress>
+                    <street>Krátká</street>
+                    <land_registry_number>32</land_registry_number>
+                    <house_number>78</house_number>
+                    <city>Praha</city>
+                    <ZIP>27501</ZIP>
+                </adress>
+            </person>
+            <person id="2" gendre="male" state="CZ" age="40" browser="Firefox">
+                <name>Petr</name>
+                <surname>Hemla</surname>
+                <login>Hemihemo</login>
+                <rights>S</rights>
+                <email>hemlajs@seznam.cz</email>
+                <phone>645 645 912</phone>
+                <adress>
+                    <street>Lesní</street>
+                    <land_registry_number>54</land_registry_number>
+                    <house_number>72</house_number>
+                    <city>Praha</city>
+                    <ZIP>27106</ZIP>
+                </adress>
+            </person>
+            <person id="3" gendre="female" state="CZ" age="36" browser="Opera">
+                <name>Markéta</name>
+                <surname>Poláková</surname>
+                <login>Majka54</login>
+                <rights>R</rights>
+                <email>maja@seznam.cz</email>
+                <phone>381 235 782</phone>
+                <adress>
+                    <street>Krajní</street>
+                    <land_registry_number>42</land_registry_number>
+                    <house_number>36</house_number>
+                    <city>Kolín</city>
+                    <ZIP>27103</ZIP>
+                </adress>
+            </person>
+            <person id="4" gendre="male" state="CZ" age="18" browser="Chrome">
+                <name>Ivan</name>
+                <surname>Ďas</surname>
+                <login>1Devil</login>
+                <rights>R</rights>
+                <email>vemtodas@gmail.cz</email>
+                <phone>137 845 946</phone>
+                <adress>
+                    <street>Kostelní</street>
+                    <land_registry_number>82</land_registry_number>
+                    <house_number>365</house_number>
+                    <city>Praha</city>
+                    <ZIP>23502</ZIP>
+                </adress>
+            </person>
+            <person id="5" gendre="?" state="?" age="?" browser="?">
+                <name>Neregistrovaný</name>
+                <surname></surname>
+                <login>host</login>
+                <rights>N</rights>
+                <email></email>
+                <phone></phone>
+                <adress>
+                    <street></street>
+                    <land_registry_number></land_registry_number>
+                    <house_number></house_number>
+                    <city></city>
+                    <ZIP></ZIP>
+                </adress>
+            </person>
+        </access_rights>
+    </category>
+    
+    <category type="Motocykly" shortcut="L1" sale="high">
+        <number_of_ad_on_page>15</number_of_ad_on_page>
+        <description>Motorová vozidla se dvěma koly (L).</description>
+        <access_rights>
+            <person id="1" gendre="male" state="CZ" age="35" browser="Chrome">
+                <name>Karel</name>
+                <surname>Králík</surname>
+                <login>KaKra</login>
+                <rights>A</rights>
+                <email>Kralik@gmail.cz</email>
+                <phone>756 162 175</phone>
+                <adress>
+                    <street>Krátká</street>
+                    <land_registry_number>32</land_registry_number>
+                    <house_number>78</house_number>
+                    <city>Praha</city>
+                    <ZIP>27501</ZIP>
+                </adress>
+            </person>
+            <person id="2" gendre="male" state="CZ" age="32" browser="Opera">
+                <name>Lukáš</name>
+                <surname>Černý</surname>
+                <login>cernas</login>
+                <rights>S</rights>
+                <email>cernylukas@gmail.cz</email>
+                <phone>366 852 775</phone>
+                <adress>
+                    <street>Lipová</street>
+                    <land_registry_number>45</land_registry_number>
+                    <house_number>98</house_number>
+                    <city>Kladno</city>
+                    <ZIP>27201</ZIP>
+                </adress>
+            </person>
+            <person id="3" gendre="female" state="CZ" age="63" browser="Chrome">
+                <name>Iveta</name>
+                <surname>Bártová</surname>
+                <login>Veta37odveta</login>
+                <rights>R</rights>
+                <email>bartinka@gmail.com</email>
+                <phone>367 715 932</phone>
+                <adress>
+                    <street>Potoční</street>
+                    <land_registry_number>24</land_registry_number>
+                    <house_number>36</house_number>
+                    <city>Těšín</city>
+                    <ZIP>23401</ZIP>
+                </adress>
+            </person>
+            <person id="4" gendre="female" state="CZ" age="26" browser="Firefox">
+                <name>Klára</name>
+                <surname>Řezníková</surname>
+                <login>rezule</login>
+                <rights>R</rights>
+                <email>reznice@gmail.com</email>
+                <phone>421 678 931</phone>
+                <adress>
+                    <street>Arbese</street>
+                    <land_registry_number>58</land_registry_number>
+                    <house_number>127</house_number>
+                    <city>Kladno</city>
+                    <ZIP>27201</ZIP>
+                </adress>
+            </person>
+            <person id="5" gendre="?" state="?" age="?" browser="?">
+                <name>Neregistrovaný</name>
+                <surname></surname>
+                <login>host</login>
+                <rights>N</rights>
+                <email></email>
+                <phone></phone>
+                <adress>
+                    <street></street>
+                    <land_registry_number></land_registry_number>
+                    <house_number></house_number>
+                    <city></city>
+                    <ZIP></ZIP>
+                </adress>
+            </person>
+        </access_rights>
+    </category>
+    
+    <category type="Čtyřkolky" shortcut="L2" sale="medium">
+        <number_of_ad_on_page>15</number_of_ad_on_page>
+        <description>Vozidla se čtyřmi koly  do 400 kg a max výkonem 15 kW (L)</description>
+        <access_rights>
+            <person id="1" gendre="male" state="CZ" age="35" browser="Chrome">
+                <name>Karel</name>
+                <surname>Králík</surname>
+                <login>KaKra</login>
+                <rights>A</rights>
+                <email>Kralik@gmail.cz</email>
+                <phone>756 162 175</phone>
+                <adress>
+                    <street>Krátká</street>
+                    <land_registry_number>32</land_registry_number>
+                    <house_number>78</house_number>
+                    <city>Praha</city>
+                    <ZIP>27501</ZIP>
+                </adress>
+            </person>
+            <person id="2" gendre="male" state="CZ" age="32" browser="Opera">
+                <name>Lukáš</name>
+                <surname>Černý</surname>
+                <login>cernas</login>
+                <rights>S</rights>
+                <email>cernylukas@gmail.cz</email>
+                <phone>366 852 775</phone>
+                <adress>
+                    <street>Lipová</street>
+                    <land_registry_number>45</land_registry_number>
+                    <house_number>98</house_number>
+                    <city>Kladno</city>
+                    <ZIP>27201</ZIP>
+                </adress>
+            </person>
+            <person id="3" gendre="male" state="CZ" age="63" browser="Chrome">
+                <name>Adam</name>
+                <surname>První</surname>
+                <login>chciEvu</login>
+                <rights>R</rights>
+                <email>prvniposledni@prvni.cz</email>
+                <phone>241 415 442</phone>
+                <adress>
+                    <street>Hrdinů</street>
+                    <land_registry_number>789</land_registry_number>
+                    <house_number>452</house_number>
+                    <city>Příbram</city>
+                    <ZIP>27809</ZIP>
+                </adress>
+            </person>
+            <person id="4" gendre="male" state="CZ" age="25" browser="Chrome">
+                <name>Emanuel</name>
+                <surname>Stránský</surname>
+                <login>motylek</login>
+                <rights>R</rights>
+                <email>emanuel@seznam.cz</email>
+                <phone>399 625 142</phone>
+                <adress>
+                    <street>Luční</street>
+                    <land_registry_number>27</land_registry_number>
+                    <house_number>354</house_number>
+                    <city>Beroun</city>
+                    <ZIP>27103</ZIP>
+                </adress>
+            </person>
+            <person id="5" gendre="?" state="?" age="?" browser="?">
+                <name>Nerđegistrovaný</name>
+                <surname></surname>
+                <login>host</login>
+                <rights>N</rights>
+                <email></email>
+                <phone></phone>
+                <adress>
+                    <street></street>
+                    <land_registry_number></land_registry_number>
+                    <house_number></house_number>
+                    <city></city>
+                    <ZIP></ZIP>
+                </adress>
+            </person>
+        </access_rights>
+    </category>
+</Bazar>

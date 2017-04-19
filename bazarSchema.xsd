@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<!-- Odkaz na github: https://github.com/LuFi16/Bazar -->
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+    <xs:element name="Bazar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="general_settings"> <!-- General settings -->       
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="charset" name="charset"/>
+                            <xs:element type="language" name="language"/>
+                            <xs:element type="on-off" name="javascript"/>
+                            <xs:element type="on-off" name="vbscript"/>
+                            <xs:element name="function">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="on-off" name="searching"/>
+                                        <xs:element type="on-off" name="filters"/>
+                                        <xs:element type="on-off" name="check_boxes"/>
+                                        <xs:element type="on-off" name="popup_window"/>
+                                        <xs:element type="on-off" name="advertisement"/>
+                                        <xs:element type="on-off" name="help"/>
+                                        <xs:element type="on-off" name="scroll_bar"/>
+                                        <xs:element type="on-off" name="video"/>
+                                        <xs:element type="on-off" name="chat"/>
+                                        <xs:element type="on-off" name="forum"/>
+                                        <xs:element type="on-off" name="zoom"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element type="protocol" name="protocol"/>
+                            <xs:element type="xs:string" name="access_restrictions"/>
+                            <xs:element type="email" name="contact"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="overwiev_of_rights"> <!-- Settings of user rights --> 
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="right" maxOccurs="unbounded" minOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="symbol" name="symbol"/>
+                                        <xs:element type="on-off" name="read"/>
+                                        <xs:element type="on-off" name="users_editing"/>
+                                        <xs:element type="on-off" name="draft_ad"/>
+                                        <xs:element type="on-off" name="ad_accept"/>
+                                        <xs:element type="on-off" name="delete_ad"/>
+                                        <xs:element type="on-off" name="responses_to_ad"/>
+                                        <xs:element type="on-off" name="accept_responses"/>
+                                        <xs:element type="on-off" name="decline_responses"/>
+                                        <xs:element type="on-off" name="reset_passwords"/>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:string" name="role" use="required"/>
+                                    <xs:attribute type="xs:integer" name="num" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="category" maxOccurs="unbounded" minOccurs="0"> <!-- Each category --> 
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:integer" name="number_of_ad_on_page"/>
+                            <xs:element type="desc" name="description"/>
+                            <xs:element name="access_rights">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="person" maxOccurs="unbounded" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="name"/>
+                                                    <xs:element type="xs:string" name="surname"/>
+                                                    <xs:element type="xs:string" name="login"/>
+                                                    <xs:element type="symbol" name="rights"/>
+                                                    <xs:element type="xs:string" name="email"/>
+                                                    <xs:element type="xs:string" name="phone"/>
+                                                    <xs:element name="adress">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="street"/>
+                                                                <xs:element type="xs:string" name="land_registry_number"/>
+                                                                <xs:element type="xs:string" name="house_number"/>
+                                                                <xs:element type="xs:string" name="city"/>
+                                                                <xs:element type="xs:string" name="ZIP"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>                                                   
+                                                </xs:sequence>
+                                                <xs:attribute type="xs:byte" name="id" use="required"/>
+                                                <xs:attribute type="xs:string" name="gendre" use="required"/>
+                                                <xs:attribute type="xs:string" name="state" use="required"/>
+                                                <xs:attribute type="xs:string" name="age" use="required"/>
+                                                <xs:attribute type="xs:string" name="browser" use="required"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="type" use="required"/>
+                        <xs:attribute type="xs:string" name="shortcut" use="required"/>
+                        <xs:attribute type="xs:string" name="sale" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- Restriction settings -->
+    <xs:simpleType name="on-off">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType> 
+    <xs:simpleType name="charset">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="utf-8"/>
+            <xs:enumeration value="windows-1258"/>
+            <xs:enumeration value="utf-7"/>
+            <xs:enumeration value="iso-8859"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="language">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="cestina"/>
+            <xs:enumeration value="anglictina"/>
+            <xs:enumeration value="nemcina"/>
+            <xs:enumeration value="francouzstina"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="protocol">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="http"/>
+            <xs:enumeration value="https"/>
+            <xs:enumeration value="ftp"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="symbol">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="A"/>
+            <xs:enumeration value="S"/>
+            <xs:enumeration value="R"/>
+            <xs:enumeration value="N"/>
+        </xs:restriction>
+    </xs:simpleType> 
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[^@]+@[^\.]+\..+"/> <!-- Recognition of email adress -->
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="desc">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="150"/>
+        </xs:restriction>
+    </xs:simpleType> 
+</xs:schema>
